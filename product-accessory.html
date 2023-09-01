@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenthClothes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="py-4 mb-3 border-bottom sticky">
+        <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 4fr;">
+            <div>
+                <a href="index.html"><img src="images/RentClothes.png" alt="" style="width: 200px;"></a>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <form class="w-100 me-3" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+                <div class="cart-container">
+                  <div class="menu-icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                      <path d="M13.3336 7.99984V5.49984C13.3336 3.65889 11.8413 2.1665 10.0003 2.1665C8.15936 2.1665 6.66698 3.65889 6.66698 5.49984V7.99984M2.99365 9.12648L2.49365 14.4598C2.35148 15.9762 2.2804 16.7344 2.53202 17.3201C2.75306 17.8345 3.14041 18.2599 3.632 18.528C4.19158 18.8332 4.95312 18.8332 6.47619 18.8332H13.5244C15.0475 18.8332 15.809 18.8332 16.3686 18.528C16.8602 18.2599 17.2476 17.8345 17.4686 17.3201C17.7202 16.7344 17.6491 15.9762 17.507 14.4598L17.007 9.12648C16.8869 7.84596 16.8269 7.2057 16.5389 6.72164C16.2853 6.29532 15.9106 5.9541 15.4625 5.74137C14.9536 5.49984 14.3106 5.49984 13.0244 5.49984L6.97619 5.49984C5.69005 5.49984 5.04699 5.49984 4.53816 5.74137C4.09003 5.9541 3.71532 6.29532 3.4617 6.72164C3.17372 7.2057 3.1137 7.84596 2.99365 9.12648Z" stroke="#475467" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p id="count">0</p>
+                  </div>
+                  <div class="cart-content">
+                    <div class="sidebar">
+                      <div class="head"><p>Your Cart</p></div>
+                      <div id="cartItem">Your cart is empty</div>
+                      <div class="foot">
+                          <h3>Total</h3>
+                          <h2 id="total">0.00 ₺</h2>
+                      </div>
+                      <button id="checkoutButton" class="cart-checkout-button">Rent <i class="fa-regular fa-lock  fa-sm" style="color: #001e57;"></i></button>
+                  </div>
+                  </div>
+                </div>
+                
+                <div class="cart-container">
+                  <div class="menu-icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99429 4.77985C8.32816 2.832 5.54979 2.30804 3.46224 4.09168C1.3747 5.87532 1.0808 8.85748 2.72016 10.967C4.08318 12.7209 8.20814 16.4201 9.56008 17.6174C9.71133 17.7513 9.78696 17.8183 9.87518 17.8446C9.95217 17.8676 10.0364 17.8676 10.1134 17.8446C10.2016 17.8183 10.2772 17.7513 10.4285 17.6174C11.7804 16.4201 15.9054 12.7209 17.2684 10.967C18.9078 8.85748 18.6498 5.85656 16.5263 4.09168C14.4029 2.3268 11.6604 2.832 9.99429 4.77985Z" stroke="#475467" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p id="countFav">0</p>
+                  </div>
+                  <div class="cart-content">
+                    <div class="sidebar">
+                      <div class="head"><p>Your Favourites</p></div>
+                      <div id="favItem">You do not have any <br>favourites <span class="colored-text">yet </span> 💔</div>
+                      <button id="checkoutButton" class="cart-checkout-button">Add favourites to Cart</button>
+                  </div>
+                  </div>
+                </div>
+                
+                <div class="menu-icons">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                    <path d="M9.99999 13C7.35826 13 5.00899 14.2755 3.51332 16.255C3.19141 16.681 3.03046 16.894 3.03572 17.1819C3.03979 17.4043 3.17946 17.6849 3.35446 17.8222C3.58098 18 3.89488 18 4.52269 18H15.4773C16.1051 18 16.419 18 16.6455 17.8222C16.8205 17.6849 16.9602 17.4043 16.9643 17.1819C16.9695 16.894 16.8086 16.681 16.4867 16.255C14.991 14.2755 12.6417 13 9.99999 13Z" stroke="#475467" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9.99999 10.5C12.0711 10.5 13.75 8.82107 13.75 6.75C13.75 4.67893 12.0711 3 9.99999 3C7.92893 3 6.24999 4.67893 6.24999 6.75C6.24999 8.82107 7.92893 10.5 9.99999 10.5Z" stroke="#475467" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+
+                <div class="flex-shrink-0 dropdown">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    </a>
+                    <ul class="dropdown-menu text-small shadow">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-menu-list">
+          <ul>
+            <li class="dropdown">
+              <a href="#">Clothes</a>
+              <div class="dropdown-content">
+                <a href="product-list.html">Dresses</a>
+                <a href="#">Skirts</a>
+                <a href="#">T-Shirts</a>
+                <a href="#">Shirts & Blouses</a>
+                <a href="#">Pants</a>
+                <a href="#">Shorts</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#">Shoes</a>
+              <div class="dropdown-content">
+                <a href="#">Men's Shoes</a>
+                <a href="#">Women's Shoes</a>
+                <a href="#">Kids' Shoes</a>
+              </div>
+            </li>
+            <li><a href="#">Bag</a></li>
+            <li class="dropdown">
+              <a href="product-accessory.html">Accessory</a>
+              <div class="dropdown-content">
+                <a href="product-accessory-rings.html">Rings</a>
+                <a href="#">Bracelets</a>
+                <a href="#">Necklaces</a>
+                <a href="#">Earrings</a>
+                <a href="#">Wedding Rings</a>
+                <a href="#">Watchs</a>
+              </div>
+            </li>
+            <li><a href="#">Casual</a></li>
+            <li><a href="#">For Special Events</a></li>
+          </ul>
+        </div>  
+    </header>
+
+    <section class="detailed-banner-area">
+        <div class="detailed-banner detailed-banner1"> <button class="banner-button">High Quality Diomands</button></div>
+        <div class="detailed-banner detailed-banner2"> <button class="banner-button">Luxury Brands & More</button></div>
+        <div class="detailed-banner detailed-banner3"> <button class="banner-button">Gold For Lovers 🤍</button></div>
+    </section>
+    <section class="acceccosory-images-area">
+        <a href="product-accessory-rings.html">
+            <div class="acceccosory-area">
+                <div class="acceccosory-images acs1"></div>
+                <div class="text" style="color: black;">Rings</div>
+            </div>
+        </a>
+        <div class="acceccosory-area">
+            <div class="acceccosory-images acs2"></div>
+            <div class="text">Bracelets</div>
+        </div>
+        <div class="acceccosory-area">
+            <div class="acceccosory-images acs3"></div>
+            <div class="text">Necklaces</div>
+        </div>
+        <div class="acceccosory-area">
+            <div class="acceccosory-images acs4"></div>
+            <div class="text">Earrings</div>
+        </div>
+        <div class="acceccosory-area">
+            <div class="acceccosory-images acs5"></div>
+            <div class="text">Wedding Bands</div>
+        </div>
+        <div class="acceccosory-area">
+            <div class="acceccosory-images acs6"></div>
+            <div class="text">Watchs</div>
+        </div>
+        <div class="acceccosory-area">
+            <div class="acceccosory-images acs7"></div>
+            <div class="text">Diomands</div>
+        </div>
+    
+    </section>
+
+    <section class="split-layout">
+
+        <section class="left-side-area">
+            <div class="filters">
+                <h2 class="filter-title">Filters</h2>
+                <div class="filter-group">
+                    <h3>Category / Material</h3>
+                    <select class="form-select" name="category">
+                        <option value="t-shirts">Gold</option>
+                        <option value="jeans">Silver</option>
+                        <option value="dresses">Platinum</option>
+                        <option value="dresses">Daily Chics</option>
+                        <!-- Add more clothing categories as needed -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <h3>Size</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="small">
+                        <label class="form-check-label">Small</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="medium">
+                        <label class="form-check-label">Medium</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="large">
+                        <label class="form-check-label">Large</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="large">
+                        <label class="form-check-label">X-Large</label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3>Brands</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="small">
+                        <label class="form-check-label">Swarovski</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="small">
+                        <label class="form-check-label">Cartier</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="small">
+                        <label class="form-check-label">Harry Winston</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="small">
+                        <label class="form-check-label">Pandora</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="size" value="small">
+                        <label class="form-check-label">Burberry</label>
+                    </div>
+                   
+                </div>
+                <div class="filter-group">
+                    <h3>Price Range</h3>
+                    <input type="range" class="form-range" name="price-range" min="0" max="100" step="5" value="0">
+                    <output>0</output>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="product-list-area">
+            <div class="album py-5">
+                <div class="container">
+            
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/ring1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">Love Wedding Band</div>
+                            <div class="location-container">
+                                <div class="card-location">Beşiktaş, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">Yellow Gold</div>
+                            <div class="card-size">Size:7</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            3500 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/ring2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">Juste Un Clou Ring</div>
+                            <div class="location-container">
+                                <div class="card-location">Kadikoy, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">Rose Gold with diomands</div>
+                            <div class="card-size">Size:9-10</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            2300 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/ring3.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">PANTHÈRE DE CARTIER RING</div>
+                            <div class="location-container">
+                                <div class="card-location">Beşiktaş, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">Panthère de Cartier ring, 18K rose gold (750/1000),</div>
+                            <div class="card-size">Size: Medium</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            950 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/bracelets1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">D'AMOUR BRACELET XS</div>
+                            <div class="location-container">
+                                <div class="card-location">Üsküdar, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">Cartier d'Amour bracelet, 18K rose gold (750/1000), set with a brilliant-cut diamond </div>
+                            <div class="card-size">Size: XS</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            4350 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/bracelets2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">ETINCELLE DE BRACELET</div>
+                            <div class="location-container">
+                                <div class="card-location">Üsküdar, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">Etincelle de Cartier bracelet, rose gold </div>
+                            <div class="card-size">Size: S-M</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            1350 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/bracelets3.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">ESSENTIAL LINES BRACELET</div>
+                            <div class="location-container">
+                                <div class="card-location">Üsküdar, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">Essential Lines bracelet, white gold (750/1000), set with 61 brilliant-cut sapphires</div>
+                            <div class="card-size">Size: 17</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            750 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/bracelets4.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">AGRAFE BRACELET</div>
+                            <div class="location-container">
+                                <div class="card-location">Üsküdar, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">Agrafe Résille bracelet, rose gold (750/1000), set with 67 brilliant-cut diamonds</div>
+                            <div class="card-size">Size: 17</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            950 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/necklace1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">CLASH DE CARTIER NECKLACE</div>
+                            <div class="location-container">
+                                <div class="card-location">Üsküdar, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">Clash de Cartier necklace, double-row model, 18K rose gold (750/1000).</div>
+                            <div class="card-size">Size: 100cm</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            1950 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/necklace2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">CLASH DE CARTIER NECKLACE SMALL MODEL</div>
+                            <div class="location-container">
+                                <div class="card-location">Beşiktaş, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">small model, 18K rose gold (750/1000).Pendant size: 41.5mm.</div>
+                            <div class="card-size">Size: 100cm</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            750 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/earring1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">Exclusive Earrings</div>
+                            <div class="location-container">
+                                <div class="card-location">Beşiktaş, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">small model, 18K rose gold (750/1000).Pendant size: 41.5mm.</div>
+                            <div class="card-size">Size: S-M</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            750 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/earring2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">Exclusive Earrings</div>
+                            <div class="location-container">
+                                <div class="card-location">Beşiktaş, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">small model, 18K rose gold (750/1000).Pendant size: 41.5mm.</div>
+                            <div class="card-size">Size: S-M</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            750 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/wedding-ring1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">Exclusive Wedding Rings</div>
+                            <div class="location-container">
+                                <div class="card-location">Beşiktaş, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">small model, 18K rose gold (750/1000).Pendant size: 41.5mm.</div>
+                            <div class="card-size">Size: S-M</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            1250 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/wedding-ring2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">Exclusive Wedding Rings</div>
+                            <div class="location-container">
+                                <div class="card-location">Beşiktaş, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">small model, 18K rose gold (750/1000).Pendant size: 41.5mm.</div>
+                            <div class="card-size">Size: S-M</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            1250 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/wedding-ring3.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">Exclusive Wedding Rings</div>
+                            <div class="location-container">
+                                <div class="card-location">Beşiktaş, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">small model, 18K rose gold (750/1000).Pendant size: 41.5mm.</div>
+                            <div class="card-size">Size: S-M</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            1250 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/watch1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">Exclusive Watch</div>
+                            <div class="location-container">
+                                <div class="card-location">Beşiktaş, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">small model, 18K rose gold (750/1000).Pendant size: 41.5mm.</div>
+                            <div class="card-size">Size: S-M</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            1250 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/watch2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">Exclusive Watch</div>
+                            <div class="location-container">
+                                <div class="card-location">Beşiktaş, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">small model, 18K rose gold (750/1000).Pendant size: 41.5mm.</div>
+                            <div class="card-size">Size: S-M</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            1250 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="like-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                            <path d="M13.5 4.05313C20.4349 -3.07499 37.7723 9.39922 13.5 25.4375C-10.7723 9.39922 6.56506 -3.07499 13.5 4.05313Z" stroke="#060047" stroke-width="2"/>
+                        </svg>
+                        </div>
+                        <img src="assets/watch3.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-title">Exclusive Watch</div>
+                            <div class="location-container">
+                                <div class="card-location">Beşiktaş, İstanbul</div>
+                                <div class="location-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.9 3.6C0.9 1.61178 2.51177 0 4.5 0C6.48822 0 8.1 1.61178 8.1 3.6C8.1 5.43583 6.72584 6.9507 4.95 7.17215V12.15C4.95 12.3985 4.74853 12.6 4.5 12.6C4.25147 12.6 4.05 12.3985 4.05 12.15V7.17215C2.27416 6.9507 0.9 5.43583 0.9 3.6ZM3.14395 11.3168C3.18457 11.562 3.01873 11.7937 2.77354 11.8343C2.13324 11.9404 1.62232 12.0995 1.28469 12.2774C1.11565 12.3664 1.00998 12.4499 0.951468 12.5162C0.923384 12.548 0.910423 12.5711 0.904743 12.5842C0.901973 12.5905 0.90088 12.5946 0.900442 12.5967C0.900023 12.5986 0.9 12.6 0.9 12.6C0.9 12.6 0.899956 12.6022 0.901375 12.6069C0.902902 12.6119 0.906672 12.6218 0.915784 12.6367C0.934884 12.6678 0.973836 12.7146 1.04681 12.7721C1.19539 12.8892 1.43827 13.0143 1.77852 13.1277C2.45431 13.353 3.41653 13.5 4.5 13.5C5.58347 13.5 6.54569 13.353 7.22148 13.1277C7.56173 13.0143 7.80461 12.8892 7.95319 12.7721C8.02616 12.7146 8.06512 12.6678 8.08422 12.6367C8.09333 12.6218 8.0971 12.6119 8.09863 12.6069C8.10001 12.6024 8.1 12.6001 8.1 12.6001C8.1 12.6001 8.09998 12.5986 8.09956 12.5967C8.09912 12.5946 8.09803 12.5905 8.09526 12.5842C8.08958 12.5711 8.07662 12.548 8.04853 12.5162C7.99002 12.4499 7.88435 12.3664 7.71531 12.2774C7.37768 12.0995 6.86676 11.9404 6.22646 11.8343C5.98127 11.7937 5.81543 11.562 5.85605 11.3168C5.89667 11.0716 6.12835 10.9058 6.37354 10.9464C7.06678 11.0612 7.68087 11.2419 8.13485 11.4811C8.55079 11.7003 9 12.0613 9 12.6C9 12.9834 8.7665 13.277 8.51027 13.4789C8.24897 13.6849 7.89874 13.8506 7.50608 13.9815C6.71606 14.2449 5.65328 14.4 4.5 14.4C3.34672 14.4 2.28394 14.2449 1.49391 13.9815C1.10126 13.8506 0.751033 13.6849 0.489731 13.4789C0.233502 13.277 0 12.9834 0 12.6C0 12.0613 0.449207 11.7003 0.865154 11.4811C1.31913 11.2419 1.93322 11.0612 2.62646 10.9464C2.87165 10.9058 3.10333 11.0716 3.14395 11.3168Z" fill="black"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="card-text">small model, 18K rose gold (750/1000).Pendant size: 41.5mm.</div>
+                            <div class="card-size">Size: S-M</div>
+                        </div>
+                
+                        <div class="card-bottom">
+                        <div class="card-bottom-text">
+                            1250 TL <span class="card-bottom-text2">/ day</span>
+                        </div>
+                        <button class="card-bottom-button">Add to Bag</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="pagination-container ">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                    <li class="page-item disabled">
+                        <a class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </section>
+        
+    
+
+    <footer>
+        <hr>
+        <div class="footer-content">
+          <div class="copyright">Copyright © RentClothes. All rights reserved.</div>
+          <div class="social-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <path d="M30 15.091C30 6.756 23.285 0 15 0C6.715 0 0 6.756 0 15.091C0 22.625 5.484 28.868 12.656 30V19.454H8.848V15.09H12.656V11.766C12.656 7.984 14.895 5.894 18.322 5.894C19.962 5.894 21.68 6.189 21.68 6.189V9.903H19.787C17.924 9.903 17.344 11.067 17.344 12.261V15.091H21.504L20.839 19.453H17.344V30C24.516 28.868 30 22.625 30 15.091Z" fill="black"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0925 5C16.0185 5 15.5085 5.017 13.9085 5.09C12.3115 5.163 11.2205 5.417 10.2665 5.788C9.26654 6.164 8.35954 6.754 7.60954 7.518C6.84677 8.26713 6.2564 9.17349 5.87954 10.174C5.51054 11.128 5.25554 12.22 5.18254 13.817C5.11054 15.416 5.09254 15.925 5.09254 20C5.09254 24.075 5.10954 24.584 5.18254 26.184C5.25554 27.781 5.50954 28.872 5.88054 29.826C6.25654 30.826 6.84654 31.733 7.61054 32.483C8.3597 33.2458 9.26605 33.8361 10.2665 34.213C11.2205 34.583 12.3115 34.837 13.9085 34.91C15.5085 34.983 16.0185 35 20.0925 35C24.1665 35 24.6765 34.983 26.2765 34.91C27.8735 34.837 28.9645 34.583 29.9185 34.212C30.9185 33.836 31.8255 33.246 32.5755 32.482C33.3383 31.7329 33.9287 30.8265 34.3055 29.826C34.6755 28.872 34.9295 27.781 35.0025 26.184C35.0755 24.584 35.0925 24.074 35.0925 20C35.0925 15.926 35.0755 15.416 35.0025 13.816C34.9295 12.219 34.6755 11.128 34.3045 10.174C33.928 9.17306 33.3376 8.26632 32.5745 7.517C31.8254 6.75422 30.9191 6.16386 29.9185 5.787C28.9645 5.418 27.8725 5.163 26.2755 5.09C24.6765 5.018 24.1675 5 20.0925 5ZM20.0925 7.703C24.0975 7.703 24.5725 7.718 26.1545 7.79C27.6165 7.857 28.4105 8.1 28.9395 8.307C29.6395 8.578 30.1395 8.904 30.6645 9.428C31.1895 9.953 31.5145 10.453 31.7855 11.153C31.9915 11.682 32.2355 12.476 32.3025 13.938C32.3745 15.52 32.3895 15.995 32.3895 20C32.3895 24.005 32.3745 24.48 32.3025 26.062C32.2355 27.524 31.9925 28.318 31.7855 28.847C31.5455 29.4985 31.1624 30.088 30.6645 30.572C30.1806 31.07 29.5912 31.4531 28.9395 31.693C28.4105 31.899 27.6165 32.143 26.1545 32.21C24.5725 32.282 24.0985 32.297 20.0925 32.297C16.0865 32.297 15.6125 32.282 14.0305 32.21C12.5685 32.143 11.7745 31.9 11.2455 31.693C10.594 31.4529 10.0046 31.0699 9.52054 30.572C9.02272 30.088 8.63967 29.4985 8.39954 28.847C8.19354 28.318 7.94954 27.524 7.88254 26.062C7.81054 24.48 7.79554 24.005 7.79554 20C7.79554 15.995 7.81054 15.52 7.88254 13.938C7.94954 12.476 8.19254 11.682 8.39954 11.153C8.67054 10.453 8.99654 9.953 9.52054 9.428C10.0045 8.93004 10.594 8.54698 11.2455 8.307C11.7745 8.101 12.5685 7.857 14.0305 7.79C15.6125 7.718 16.0875 7.703 20.0925 7.703Z" fill="black"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0925 25.0051C19.4353 25.0051 18.7844 24.8757 18.1772 24.6242C17.57 24.3726 17.0182 24.004 16.5535 23.5392C16.0887 23.0745 15.7201 22.5227 15.4685 21.9155C15.217 21.3082 15.0875 20.6574 15.0875 20.0001C15.0875 19.3429 15.217 18.692 15.4685 18.0848C15.7201 17.4776 16.0887 16.9258 16.5535 16.4611C17.0182 15.9963 17.57 15.6276 18.1772 15.3761C18.7844 15.1246 19.4353 14.9951 20.0925 14.9951C21.42 14.9951 22.693 15.5224 23.6316 16.4611C24.5702 17.3997 25.0975 18.6727 25.0975 20.0001C25.0975 21.3275 24.5702 22.6006 23.6316 23.5392C22.693 24.4778 21.42 25.0051 20.0925 25.0051ZM20.0925 12.2901C18.0477 12.2901 16.0867 13.1024 14.6408 14.5483C13.1948 15.9942 12.3825 17.9553 12.3825 20.0001C12.3825 22.045 13.1948 24.006 14.6408 25.4519C16.0867 26.8978 18.0477 27.7101 20.0925 27.7101C22.1374 27.7101 24.0984 26.8978 25.5443 25.4519C26.9902 24.006 27.8025 22.045 27.8025 20.0001C27.8025 17.9553 26.9902 15.9942 25.5443 14.5483C24.0984 13.1024 22.1374 12.2901 20.0925 12.2901ZM30.0455 12.1501C30.0455 12.6335 29.8535 13.0971 29.5117 13.4388C29.17 13.7806 28.7064 13.9726 28.223 13.9726C27.7397 13.9726 27.2761 13.7806 26.9343 13.4388C26.5926 13.0971 26.4005 12.6335 26.4005 12.1501C26.4005 11.6668 26.5926 11.2032 26.9343 10.8614C27.2761 10.5196 27.7397 10.3276 28.223 10.3276C28.7064 10.3276 29.17 10.5196 29.5117 10.8614C29.8535 11.2032 30.0455 11.6668 30.0455 12.1501Z" fill="black"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="30" viewBox="0 0 38 30" fill="none">
+              <path d="M33.3255 7.46842C33.348 7.7939 33.348 8.11938 33.348 8.44786C33.348 18.4567 25.7285 30 11.7959 30V29.994C7.68012 30 3.64987 28.8211 0.185089 26.5982C0.783551 26.6702 1.38501 26.7062 1.98798 26.7077C5.39876 26.7107 8.71205 25.5663 11.3954 23.4589C8.15409 23.3974 5.31177 21.2841 4.31883 18.1987C5.45426 18.4177 6.62418 18.3727 7.73861 18.0683C4.20484 17.3543 1.6625 14.2495 1.6625 10.6437C1.6625 10.6107 1.6625 10.5792 1.6625 10.5477C2.71543 11.1342 3.89436 11.4597 5.10028 11.4957C1.77199 9.27131 0.746054 4.84359 2.75593 1.38181C6.60169 6.11401 12.2758 8.99083 18.3669 9.29531C17.7565 6.66447 18.5904 3.90765 20.5583 2.05826C23.6091 -0.809555 28.4073 -0.662565 31.2751 2.38674C32.9715 2.05226 34.5974 1.4298 36.0853 0.547859C35.5199 2.30125 34.3364 3.79065 32.7555 4.7371C34.2569 4.56011 35.7239 4.15813 37.1053 3.54467C36.0883 5.06857 34.8074 6.39599 33.3255 7.46842Z" fill="black"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="43" height="30" viewBox="0 0 43 30" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M38.2747 0.90659C40.1154 1.40109 41.5714 2.85715 42.0659 4.6978C42.9725 8.04945 43 15 43 15C43 15 43 21.978 42.0934 25.3022C41.5989 27.1429 40.1429 28.5989 38.3022 29.0934C34.978 30 21.5989 30 21.5989 30C21.5989 30 8.21979 30 4.89562 29.0934C3.05496 28.5989 1.59892 27.1429 1.10441 25.3022C0.197815 21.9506 0.197815 15 0.197815 15C0.197815 15 0.197815 8.04945 1.07693 4.72528C1.57144 2.88462 3.02749 1.42857 4.86814 0.934073C8.19232 0.0274658 21.5714 0 21.5714 0C21.5714 0 34.9506 0 38.2747 0.90659ZM28.4121 15L17.3132 21.4286V8.57143L28.4121 15Z" fill="black"/>
+            </svg>
+          </div>
+        </div>
+    </footer>
+
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</body>
+</html>

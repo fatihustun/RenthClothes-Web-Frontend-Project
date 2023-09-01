@@ -1,0 +1,969 @@
+body{
+margin: 0px 50px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.banner-images{
+    border-radius: 50px;
+}
+
+h2{
+    color: #060047;
+}
+
+.colored-text{
+    color: #E90064;
+}
+
+.banner-text{
+    color: #060047;
+}
+
+.white-text{
+    color:white;
+}
+
+.form-control{
+    border-radius: 50px;
+    border: 1px solid #E0E0E0;
+    background: #FFF;
+    margin-right: 10px;
+    width: 90%;
+}
+
+.menu-icons{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: var(--gray-200, #EAECF0);
+
+    margin-right: 10px;
+}
+/*  bu kısım header için kullanılabilir
+.sticky-part{
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 100;
+    margin-left: calc(-1 * 50px);
+    margin-right: calc(-1 * 50px);
+    padding: 50px;
+} */
+
+.navbar-menu-list {
+    margin-top: 30px;
+  }
+  
+  .navbar-menu-list ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-menu-list a{
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .navbar-menu-list li {
+    margin-right: 15px;
+    color: #000;
+    text-align: center;
+    font-family: Mulish;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  
+  .navbar-menu-list li:hover {
+    color: #E90064;
+  }
+  
+  /* Dropdown styles */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid #E0E0E0;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Mulish;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f2f2f2;
+    text-decoration: none; /* Remove underline on hover */
+    color: #E90064; /* Change text color on hover */
+  }
+
+  .cart-container {
+    position: relative;
+    display: inline-block;
+    z-index: 111;
+    border-radius: 50%;
+  }
+
+  #count{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #E90064; /* Change to desired background color */
+    color: white; /* Change to desired text color */
+    font-size: 14px; /* Change to desired font size */
+    padding: 1px 8px; /* Adjust padding as needed */
+    border-radius: 100%; /* To create a circular shape */
+  }
+
+  #countFav{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #E90064; /* Change to desired background color */
+    color: white; /* Change to desired text color */
+    font-size: 14px; /* Change to desired font size */
+    padding: 1px 8px; /* Adjust padding as needed */
+    border-radius: 100%; /* To create a circular shape */
+  }
+  
+  .cart-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px; /* Adjust as needed */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+  }
+  
+  .cart-container:hover .cart-content {
+    display: block;
+  }
+  
+  .sidebar{
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}
+
+.head{
+    background-color:#060047;
+    border-radius: 10px;
+    text-align: center;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    align-items: center;
+    text-align: center;
+}
+
+.cart-item p{
+    color: #060047;
+    margin-top: 15px;
+    font: bold;
+}
+
+.cart-item h2{
+    color: #060047;
+    font: bold;
+    
+}
+
+.foot{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #060047;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+.foot h3{
+    color: #060047;
+    font: bold;
+    margin: 0px;
+}
+
+.foot h2{
+    color: #060047;
+    font: bold;
+    font-size: x-large;
+    margin: 0px;
+}
+
+.cart-checkout-button{
+    margin-top: 20px;
+    width:270px;
+    border-radius: 50px;
+    background: #E90064;
+    border: none;
+    box-shadow: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 14px;
+}
+
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 3px;
+    margin: 10px 10px;
+}
+
+.row-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #060047;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rowimg{
+    max-width: 43px;
+    max-height: 43px;
+    border-radius: 50%;
+}
+
+.fa-trash:hover{
+    cursor: pointer;
+    color: #333;
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+    background-color: white; /* Adjust background color as needed */
+    z-index: 1000; /* Ensure it appears above other content */
+    margin-left: calc(-1 * 50px);
+    margin-right: calc(-1 * 50px);
+    padding:5vh;
+  }
+
+.category-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+
+}
+
+.category {
+    flex: 1;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid #EAECF0;
+    width: 268px;
+    height: 126px;
+    flex-shrink: 0;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    transition: background-color 0.3s ease; 
+    cursor: pointer; 
+}
+
+.category:hover {
+    background-color: #f5f5f5;
+}
+
+.category:last-child {
+    margin-right: 0; 
+}
+
+
+.category p {
+    margin: 0; 
+    font-family: Mulish;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.button-box {
+	width: 300px;
+	margin: 35px auto;
+	position: relative;
+	border-radius: 50px;
+    border: 3px solid #C5C5C5;
+    background: #93989c83;
+}
+
+.toggle-btn {
+	padding: 10px 40px;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: none;
+	position: relative;
+	text-align: center;
+    color: #EAECF0;
+}
+
+#btn {
+	left: 0;
+	top: 0;
+	position: absolute;
+	width: 150px;
+	height: 100%;
+	background: #060047;
+	border-radius: 30px;
+	transition: .5s;
+}
+
+.product-header-area{
+    display: flex;
+    justify-content:space-between;
+    align-items:end;
+}
+
+
+/* Product-cards-area*/
+
+#root {
+    display: flex;
+    justify-content:center;
+    overflow-x: auto;
+}
+
+
+
+#root2 {
+    display: flex;
+    justify-content:center;
+    overflow-x: auto;
+}
+
+
+.product-area-title{
+    color: #060047;
+    font-family: Mulish;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.more-button-text{
+    color: #060047;
+    font-family: Mulish;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.product-cards-area{
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: calc(-1 * 50px);
+    margin-right: calc(-1 * 50px);
+    display: flex;
+    justify-content:center;
+    overflow-x: auto;
+
+}
+
+.product-cards-area .card{
+    min-width: 279px;
+    height: auto;
+    margin: 30px;
+    border-radius: 15px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.like-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.card-img-top{
+    margin-top: 30px;
+    height: 254px;
+}
+
+.card{
+    padding: 0px;
+}
+
+.card-body {
+    display: grid;
+    grid-template-areas:
+        'card-title location-container'
+        'card-text card-size';
+    gap: 10px;
+}
+
+.card-title {
+    grid-area: card-title;
+    font-weight: bold;
+}
+
+.location-container {
+    display: flex;
+    align-items: center;
+    grid-area: location-container;
+    text-align: right;
+    margin-right: 0px;
+}
+
+.card-location {
+    margin-right: 5px; /* Add spacing between location text and icon */
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+
+.card-text {
+    grid-area: card-text;
+}
+
+.card-size {
+    grid-area: card-size;
+    color: #000;
+    text-align: right;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+.card-title{
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card-text{
+    font-size: 12px;
+    color: #000;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    max-width: 180px;
+}
+
+
+.card-bottom{
+    border-radius: 0px 0px 15px 15px;
+    background: #060047;
+    height: 80px;
+    width: auto;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between; /* Spread items across the available space */
+    align-items: center; /* Center items vertically */
+    padding: 10px;
+}
+
+.card-bottom-text {
+    flex: 1; 
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card-bottom-text2 {
+    flex: 1; 
+    color: #FFF;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.card-bottom-button {
+    margin-left: 10px;
+    border-radius: 50px;
+    background: #E90064;
+    border: none;
+    box-shadow: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add a smooth transition for background color change */
+}
+
+.card-bottom-button:hover {
+    background: #7f1b48; /* Change background color on hover */
+}
+
+/* why-rentclothes section area */
+
+.why-rentclothes{
+    margin-top: 70px;
+}
+
+.why-rentclothes-area{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #060047;
+    margin-left: calc(-1 * 50px);
+    margin-right: calc(-1 * 50px);
+}
+
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #FFF;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.small-title-rentclothes-area{
+
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 80px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between; /* Align items horizontally in the center */
+    flex-wrap: wrap; /* Allow items to wrap onto new lines */
+}
+
+.rent-item {
+    width: 250px;
+    height: 250px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.10);
+    margin: 40px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.item-text {
+    color: #000;
+    text-align: center;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 30px;
+  }
+
+  hr{
+    margin-top: 50px;
+    margin-left: calc(-1 * 50px);
+    margin-right: calc(-1 * 50px);
+  }
+
+  footer {
+    padding: 20px 0;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .footer-content svg{
+    margin: 10px;
+  }
+  
+  .copyright {
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* product-list-html*/
+
+
+  .split-layout {
+    display: flex;
+    background-color: white;
+  }
+  
+  /* Left section */
+  .left-side-area{
+    flex: 1;
+    width: 25%;
+    padding-right: 50px;
+  }
+  
+  /* Right section */
+  .product-list-area{
+    flex: 3;
+    width: 75%;
+  }
+
+  .filter-title{
+    color: #060047;
+    font-weight: bold;
+    font-size:xx-large;
+  }
+
+  h3{
+    font-size:medium;
+    margin-top: 30px;
+  }
+
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Override the Bootstrap pagination styles */
+.pagination-container .page-item.active .page-link {
+    background-color:#E90064;
+    border-color: #E90064;
+    color: rgb(255, 255, 255);
+}
+
+/*product detail page*/
+
+.detailed-banner-area{
+    margin: 20px 0px;
+    display: flex ;
+    align-items: center;
+    justify-content: space-between;  
+    
+    margin-left: calc(-1 * 50px);
+    margin-right: calc(-1 * 50px); 
+}
+.detailed-banner {
+    display: flex;
+    justify-content: center;
+    align-items:end;
+    padding-bottom: 20px;
+    margin: 0px 10px;
+    border-radius: 10px;
+    width: 33%;
+    height: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detailed-banner:hover {
+    transform: scale(1.05); /* Enlarge the element on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.detailed-banner2 {
+    background-image: url('assets/cartier-banner.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.detailed-banner1 {
+    background-image: url('assets/diomand-banner.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.detailed-banner3 {
+    background-image: url('assets/gold-banner.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.banner-button{
+    margin-left: 10px;
+    border-radius: 20px;
+    background: #ffffffb3;
+    border: none;
+    box-shadow: none;
+    padding: 10px 20px;
+    color: black;
+    font-size: medium;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add a smooth transition for background color change */
+}
+
+.banner-button:hover {
+    background: #7f1b48; /* Change background color on hover */
+}
+
+.acceccosory-images-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px -30px;
+    text-align: center;
+}
+
+.acceccosory-images {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 1px solid rgb(189, 189, 189);
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.acceccosory-images:hover {
+    border-color: rgb(150, 19, 139);
+}
+
+.acs1 {
+    background-image: url('assets/ring.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.acs2 {
+    background-image: url('assets/bracelets.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.acs3 {
+    background-image: url('assets/necklaces.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.acs4 {
+    background-image: url('assets/earrings.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.acs5 {
+    background-image: url('assets/wedding.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.acs6 {
+    background-image: url('assets/watch.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.acs7 {
+    background-image: url('assets/earring.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.checkout{
+   
+    display: flex ;
+    align-items: center;
+    justify-content: center;  
+    
+}
+.check-out-area{
+    
+    width: 500px;
+    margin: 50px 30px;
+    align-items: center;
+    justify-content: center;  
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.product-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #C5C5C5;
+    border-radius: 15px;
+    margin: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+.product-area img{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: 2px solid #C5C5C5;
+}
+
+.checkout-total-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px;
+}
+
+.checkout-title{
+    color: white;
+}
+
+.payment-area{
+    margin-top: 10px;
+}
+
+.form-control{
+    border-radius: 15px;
+}
+
+.check-out-button-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.check-out-button{
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #E90064;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add a smooth transition for background color change */
+}
+
+.check-out-button:hover {
+    background: #7f1b48; /* Change background color on hover */
+}
+
+/* Pop-up design */
+
+
+.popup {
+    width: 400px;
+    background-color: #04034e;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 1111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .show-popup {
+    visibility: visible;
+  
+  }
+  
+  .popup img {
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: white;
+  }
+  
+  .popup h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+    color: #ffffff !important;
+  }
+  
+  .popup p {
+    color: #ffffff !important;
+  }
+  
+  .popup button{
+    background-color:#E90064;
+    width: 80%;
+    height: 40px;
+    border: none;
+    color: white;
+    margin-bottom: 40px;
+    border-radius: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add a smooth transition for background color change */
+}
+
+.popup button:hover {
+    background: #7f1b48; /* Change background color on hover */
+}
+
+  .form-control{
+    margin-right:0px;
+    border-radius: 5px;
+    width: 100%;
+  }

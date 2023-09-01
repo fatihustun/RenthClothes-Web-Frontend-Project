@@ -1,0 +1,18 @@
+body{
+    background-color: rgb(11, 1, 56);
+}
+
+.sign-up-area{
+    background-color: white;
+    border-radius: 20px;
+    
+}
+
+.white-text-color{
+    color: white;
+}
+
+.sign-up-button{
+    width: 300px;
+    text-decoration: none;
+}
